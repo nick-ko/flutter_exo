@@ -4,6 +4,7 @@ import 'exo2.dart';
 import 'exo3.dart';
 import 'test.dart';
 import 'Greenery.dart';
+import 'Profil.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -23,15 +24,16 @@ class _ListPageState extends State<HomePage> {
     Exo1(),
     Exo2(),
     Exo3(),
-    GreeneryPage()
-
+    GreeneryPage(),
+    ProfilePage(),
   ];
 
   List<String> title=[
     "Exercice 1",
     "Exercice 2",
     "Exercice 3",
-    "Template Greenery"
+    "Template Greenery",
+    "Profil template",
   ];
   List docs;
   TextEditingController editingController = TextEditingController();
