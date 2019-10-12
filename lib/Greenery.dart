@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
 
 class GreeneryPage extends StatefulWidget {
+
+  GreeneryPage({Key key, this.title,
+    this.firstColor,
+    this.secondColor,
+    this.price,
+    this.productImage}) : super(key: key);
+
+  final String title;
+  final Color firstColor;
+  final Color secondColor;
+  final String price;
+  final Image productImage;
   @override
   GreeneryState createState() => GreeneryState();
 }
@@ -30,13 +42,15 @@ class GreeneryState extends State<GreeneryPage> with SingleTickerProviderStateMi
   ];
   var price = 0;
   var quantity = 0;
-  var Fprice= 50;
-  var productImage = Image.asset("assets/plant.png");
-  var greenColor = Color(0xff32a05f);
-  var darkGreenColor = Color(0xff279152);
 
   @override
   Widget build(BuildContext context) {
+    var greenColor = widget.firstColor;
+    var darkGreenColor = widget.secondColor;
+    var Fprice= widget.price;
+    var productImage = widget.productImage;
+
+
     return Scaffold(
       backgroundColor: greenColor,
       body: Column(
@@ -61,7 +75,7 @@ class GreeneryState extends State<GreeneryPage> with SingleTickerProviderStateMi
                     Container(
                       width: 300.0,
                       child: Text(
-                        'Fiddle Leaf Fig Topiary',
+                        widget.title,
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 32.0),
                       ),
@@ -136,13 +150,11 @@ class GreeneryState extends State<GreeneryPage> with SingleTickerProviderStateMi
                             data: 50,
                               child: Container(
                                 width: 100.0,
-                                child: Image.asset("assets/plant.png",
-                                  fit: BoxFit.cover),
+                                child: widget.productImage,
                               ),
                               feedback: Container(
                                 width: 100.0,
-                                child: Image.asset("assets/plant.png",
-                                  fit: BoxFit.cover),
+                                child: widget.productImage,
                               ),
                           )
                         )

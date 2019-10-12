@@ -5,6 +5,13 @@ import 'exo3.dart';
 import 'test.dart';
 import 'Greenery.dart';
 import 'Profil.dart';
+import 'schoolapp/SchoolApp.dart';
+import 'ecBank/Profil.dart';
+import 'foodDelivery/FoodApp.dart';
+import 'E-bank/Bank.dart';
+import 'donuts/Donuts.dart';
+import 'despicable/pages/character_listing_screen.dart';
+import 'calculator/Calculator.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -24,16 +31,35 @@ class _ListPageState extends State<HomePage> {
     Exo1(),
     Exo2(),
     Exo3(),
-    GreeneryPage(),
+    Calculator(),
+    GreeneryPage(title: 'Greenery',
+      firstColor: Colors.blue,
+      secondColor: Colors.red,
+      price: '25',
+      productImage: Image.asset("assets/plate1.png", fit: BoxFit.cover,),
+    ),
     ProfilePage(),
+    SchoolApp(),
+    EcBankProfil(),
+    FoodApp(),
+    Bank(),
+    Donuts(),
+    CharacterListingScreen(),
   ];
 
   List<String> title=[
     "Exercice 1",
     "Exercice 2",
     "Exercice 3",
+    "Calculatrice",
     "Template Greenery",
     "Profil template",
+    "School App Template",
+    "EcBank Template",
+    "Food App Template",
+    "E-Bank Template",
+    "Donuts Template",
+    "Despicable Me Template"
   ];
   List docs;
   TextEditingController editingController = TextEditingController();
